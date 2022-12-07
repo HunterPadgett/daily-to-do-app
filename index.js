@@ -70,6 +70,8 @@ function displayTodos() {
   const deleteBtns = document.querySelectorAll("#delete");
   const check = document.querySelectorAll("#checked");
 
+  // This way, when the editTask and deleteTask functions are called, the correct taskInput element will be passed as an argument and used in those functions.
+
   editBtns.forEach((button) => {
     button.addEventListener("click", () =>
     editTask(button.parentElement.parentElement.querySelector("#taskInput")))
@@ -80,20 +82,17 @@ function displayTodos() {
     deleteTask(button.parentElement.parentElement.querySelector("#taskInput")))
   });
 
-  check.forEach((button) => {
-    button.addEventListener("click", handleCheckboxClick)
-  });
+  check.forEach((button) => button.addEventListener("click", handleCheckboxClick
+  ));
 
 }
 
 
-
 function handleCheckboxClick() {
-  // console.log("checked")
   // Get the corresponding taskInput element
   const taskInput = document.querySelector("#taskInput");
   const checked = document.querySelector("#checked");
-  // console.log(checked)
+  console.log(checked)
 
   // check if the checkbox is checked then apply necessary style
   if (checked.checked) {
