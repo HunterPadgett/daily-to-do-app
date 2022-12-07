@@ -1,0 +1,175 @@
+body {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: "Poppins", sans-serif;
+ color: #f5f5f5;
+ background-color: #121212;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+.app {
+ background: linear-gradient(#af1dcc, #3ca9c4);
+ width: 60%;
+ height: 90%;
+ border-radius: 0.5rem;
+ padding: 15px;
+ overflow-y: scroll;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+ appearance: none;
+ border: none;
+ outline: none;
+ /* background: none; */
+ cursor: initial;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+ display: none;
+}
+
+#bubble {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 20px;
+ height: 20px;
+ margin: 10px;
+ border-radius: 50%;
+ border: 2px solid #121212;
+ box-shadow: 0px 0px 5px #ffffff;
+ cursor: pointer;
+}
+
+#bubble::after {
+ content: "";
+ display: block;
+ opacity: 0;
+ width: 0px;
+ height: 0px;
+ background-color: #121212;
+ box-shadow: 0px 0px 5px #ffffff;
+ border-radius: 50%;
+ transition: 0.2s ease-in-out;
+}
+
+input:checked ~ #bubble::after {
+ width: 10px;
+ height: 10px;
+ opacity: 1;
+}
+
+h4,
+h5,
+h3,
+h2,
+h1 {
+ flex: 1 1 0%;
+ min-width: 0;
+ font-weight: 700;
+}
+
+.form-control {
+ background-color: transparent;
+ border: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+label {
+ color: #f5f5f5;
+ font-size: 1.15rem;
+}
+
+input {
+ padding: 3px;
+ background-color: #f5f5f5a9;
+ border-radius: 0.5rem;
+ box-shadow: 0 1px 3px #1212129c;
+}
+
+#newTask {
+ display: flex;
+ align-items: center;
+ width: 60%;
+ height: 2.5rem;
+}
+
+#newtaskLabel {
+ display: flex;
+ align-items: center;
+ padding: 1rem;
+}
+
+button,
+button:active,
+button:focus,
+button::after {
+ border: transparent;
+ outline: none;
+}
+
+.btn:hover {
+ scale: 1.1;
+ transition: 0.2s ease-in-out;
+}
+
+.fa-plus {
+ background-color: #121212;
+ color: #f5f5f5;
+ padding: 6px;
+ border-radius: 0.5rem;
+ border: none;
+ outline: none;
+}
+
+.fa-pen-to-square,
+.fa-trash {
+ background-color: #121212;
+ color: #f5f5f5;
+ padding: 6px;
+ border-radius: 0.5rem;
+ border: none;
+ outline: none;
+}
+
+#tasks {
+ padding: 1rem;
+}
+
+#taskInput {
+  width: 80%;
+  padding: 0.3em 0.3em;
+}
+
+.taskInput.done {
+  text-decoration: line-through;
+  color: #12121279;
+}
+
+#taskSpan {
+ position: absolute;
+ left: -9999px;
+ display: inline-block;
+ min-width: 80%;
+}
+
+#todo-item {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+}
+
+
+
+#todo-content {
+ flex: 1 1 0%;
+}
