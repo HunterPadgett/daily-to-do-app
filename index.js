@@ -3,13 +3,15 @@ const newTask = document.getElementById("newTask");
 const tasks = document.getElementById("tasks");
 const submit = document.getElementById("submit");
 const timeOfDay = document.getElementById("timeOfDay");
-const cb = document.getElementById("bubble");
+const cb = document.getElementById("checked");
 const taskInput = document.getElementById("taskInput");
 const todoItem = document.getElementById("todo-item");
 const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+cb.addEventListener("click", handleCheckboxClick)
 
 window.addEventListener("load", () => {
  form.addEventListener("submit", (e) => {
@@ -28,7 +30,8 @@ window.addEventListener("load", () => {
   e.target.reset();
   displayTodos();
  });
-
+;
+ 
  displayTodos();
  getTime();
 });
@@ -44,7 +47,7 @@ function displayTodos() {
       <div id="todo-item" class="">
      <div id="todo-content" class="">
       <label class="d-flex align-items-center">
-       <input type="checkbox" id="checked" onClick="handleCheckboxClick(this)" />
+       <input type="checkbox" id="checked" />
        <span id="bubble" class=""></span>
        <input type="text" id="taskInput" class="taskInput " value="${todo.content}" readonly="" data-index="${todoIndex}" />
        <span id="taskSpan"></span>
@@ -52,10 +55,10 @@ function displayTodos() {
      </div>
 
      <div id="todo-actions" class="m-1 p-1">
-      <button id="edit" onClick="editTask(this)"  class="btn">
+      <button id="edit" class="btn">
        <i class="fa-solid fa-pen-to-square"></i>
       </button>
-      <button id="delete" onClick="deleteTask(this)" class="btn" data-index="${todoIndex}">
+      <button id="delete" class="btn" data-index="${todoIndex}">
        <i class="fa-solid fa-trash"></i>
       </button>
      </div>
@@ -63,30 +66,34 @@ function displayTodos() {
     `);
   });
   
+  const editBtns = document.querySelectorAll("#edit");
+  const deleteBtns = document.querySelectorAll("#delete");
+  const check = document.querySelectorAll("#checked");
+
+  editBtns.forEach((button) => {
+    button.addEventListener("click", () =>
+    editTask(button.parentElement.parentElement.querySelector("#taskInput")))
+  });
+
+  deleteBtns.forEach((button) => {
+    button.addEventListener("click", () => 
+    deleteTask(button.parentElement.parentElement.querySelector("#taskInput")))
+  });
+
+  check.forEach((button) => {
+    button.addEventListener("click", handleCheckboxClick)
+  });
+
 }
 
-function growTextBox() {
-  // console.log('is this thing on')
-  // Get all taskInput elements
-  const taskInputs = document.querySelectorAll('#taskInput');
 
-  // Loop through each taskInput element
-  taskInputs.forEach(taskInput => {
-    // Add an event listener to the taskInput element
-    taskInput.addEventListener('input', function (event) {
-      // Get the taskSpan element that is a sibling of the taskInput element
-      const taskSpan = taskInput.parentElement.querySelector('#taskSpan');
-      taskSpan.innerHTML = this.value.replace(/\s/g, '&nbsp;');
-      this.style.width = taskSpan.offsetWidth + 'px';
-    });
-  })
-}
 
-function handleCheckboxClick(e) {
+function handleCheckboxClick() {
+  // console.log("checked")
   // Get the corresponding taskInput element
-  const taskInput = e.parentElement.querySelector("#taskInput");
-  const checked = e.parentElement.querySelector("#checked");
-  console.log(checked)
+  const taskInput = document.querySelector("#taskInput");
+  const checked = document.querySelector("#checked");
+  // console.log(checked)
 
   // check if the checkbox is checked then apply necessary style
   if (checked.checked) {
@@ -98,12 +105,11 @@ function handleCheckboxClick(e) {
   }
 }
 
-function deleteTask(e) {
-  // Use a CSS selector to directly select the taskInput element
-  const taskInput = e.parentElement.parentElement.querySelector("#taskInput");
+function deleteTask(taskInput) {
+  console.log(taskInput)
 
   // Remove the to-do item from the DOM
- e.parentElement.parentElement.remove();
+ taskInput.parentElement.parentElement.parentElement.remove();
 
  // Get the index of the deleted to-do item from the dataset.index property
  const index = parseInt(taskInput.dataset.index, 10);
@@ -116,11 +122,8 @@ function deleteTask(e) {
 }
 
 
-function editTask(e) {
-  // Use a CSS selector to directly select the taskInput element
-  let taskInput = e.parentElement.parentElement.querySelector("#taskInput");
-  console.log(taskInput);
-
+function editTask(taskInput) {
+ 
   // make the text input editable and focus on the input
   taskInput.removeAttribute("readonly");
   taskInput.focus();
@@ -154,4 +157,19 @@ function getTime() {
  }
 }
 
+function growTextBox() {
+  // console.log('is this thing on')
+  // Get all taskInput elements
+  const taskInputs = document.querySelectorAll('#taskInput');
 
+  // Loop through each taskInput element
+  taskInputs.forEach(taskInput => {
+    // Add an event listener to the taskInput element
+    taskInput.addEventListener('input', function (event) {
+      // Get the taskSpan element that is a sibling of the taskInput element
+      const taskSpan = taskInput.parentElement.querySelector('#taskSpan');
+      taskSpan.innerHTML = this.value.replace(/\s/g, '&nbsp;');
+      this.style.width = taskSpan.offsetWidth + 'px';
+    });
+  })
+}
