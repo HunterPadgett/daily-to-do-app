@@ -3,15 +3,13 @@ const newTask = document.getElementById("newTask");
 const tasks = document.getElementById("tasks");
 const submit = document.getElementById("submit");
 const timeOfDay = document.getElementById("timeOfDay");
-const cb = document.getElementById("checked");
+// const cb = document.getElementById("checked");
 const taskInput = document.getElementById("taskInput");
 const todoItem = document.getElementById("todo-item");
 const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
-
-cb.addEventListener("click", handleCheckboxClick)
 
 window.addEventListener("load", () => {
  form.addEventListener("submit", (e) => {
@@ -82,16 +80,29 @@ function displayTodos() {
     deleteTask(button.parentElement.parentElement.querySelector("#taskInput")))
   });
 
-  check.forEach((button) => button.addEventListener("click", handleCheckboxClick
-  ));
-
+  check.forEach((button) => button.addEventListener("click", () => handleCheckboxClick(button.parentElement.parentElement.querySelector("#taskInput"), button)));
 }
 
+function growTextBox() {
+  // console.log('is this thing on')
+  // Get all taskInput elements
+  const taskInputs = document.querySelectorAll('#taskInput');
 
-function handleCheckboxClick() {
-  // Get the corresponding taskInput element
-  const taskInput = document.querySelector("#taskInput");
-  const checked = document.querySelector("#checked");
+  // Loop through each taskInput element
+  taskInputs.forEach(taskInput => {
+    // Add an event listener to the taskInput element
+    taskInput.addEventListener('input', function (event) {
+      // Get the taskSpan element that is a sibling of the taskInput element
+      const taskSpan = taskInput.parentElement.querySelector('#taskSpan');
+      taskSpan.innerHTML = this.value.replace(/\s/g, '&nbsp;');
+      this.style.width = taskSpan.offsetWidth + 'px';
+    });
+  })
+}
+
+function handleCheckboxClick(taskInput, checked) {
+  // Get the corresponding checked element
+  
   console.log(checked)
 
   // check if the checkbox is checked then apply necessary style
@@ -105,8 +116,7 @@ function handleCheckboxClick() {
 }
 
 function deleteTask(taskInput) {
-  console.log(taskInput)
-
+  // console.log(taskInput)
   // Remove the to-do item from the DOM
  taskInput.parentElement.parentElement.parentElement.remove();
 
@@ -145,7 +155,7 @@ function editTask(taskInput) {
 function getTime() {
  let date = new Date();
  let time = date.getHours();
- console.log(time);
+//  console.log(time);
 
  if (time < 12) {
   timeOfDay.innerHTML = "Good morning, ";
@@ -156,19 +166,3 @@ function getTime() {
  }
 }
 
-function growTextBox() {
-  // console.log('is this thing on')
-  // Get all taskInput elements
-  const taskInputs = document.querySelectorAll('#taskInput');
-
-  // Loop through each taskInput element
-  taskInputs.forEach(taskInput => {
-    // Add an event listener to the taskInput element
-    taskInput.addEventListener('input', function (event) {
-      // Get the taskSpan element that is a sibling of the taskInput element
-      const taskSpan = taskInput.parentElement.querySelector('#taskSpan');
-      taskSpan.innerHTML = this.value.replace(/\s/g, '&nbsp;');
-      this.style.width = taskSpan.offsetWidth + 'px';
-    });
-  })
-}
