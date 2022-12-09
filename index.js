@@ -27,10 +27,11 @@ window.addEventListener("load", () => {
 
   e.target.reset();
   displayTodos();
+  // growTextBox();
  });
-;
  
  displayTodos();
+//  growTextBox();
  getTime();
 });
 
@@ -48,7 +49,7 @@ function displayTodos() {
        <input type="checkbox" id="checked" />
        <span id="bubble" class=""></span>
        <input type="text" id="taskInput" class="taskInput " value="${todo.content}" readonly="" data-index="${todoIndex}" />
-       <span id="taskSpan"></span>
+       
       </label>
      </div>
 
@@ -63,10 +64,13 @@ function displayTodos() {
     </div>
     `);
   });
-  
+
   const editBtns = document.querySelectorAll("#edit");
   const deleteBtns = document.querySelectorAll("#delete");
   const check = document.querySelectorAll("#checked");
+  const taskInputs = document.querySelectorAll("#taskInput");
+
+  // eventlisteners for checkboxes, edit buttons, and delete buttons
 
   // This way, when the editTask and deleteTask functions are called, the correct taskInput element will be passed as an argument and used in those functions.
 
@@ -81,24 +85,37 @@ function displayTodos() {
   });
 
   check.forEach((button) => button.addEventListener("click", () => handleCheckboxClick(button.parentElement.parentElement.querySelector("#taskInput"), button)));
+
+  
+taskInputs.forEach((taskInput) => {
+  taskInput.addEventListener("input", (e) => {
+    // Use e.target instead of this to reference the input element
+    const input = e.target;
+    // Set the width of the #taskInput element based on its scrollWidth
+    input.style.width = input.scrollWidth + "px";
+    console.log(input.scrollWidth);
+  });
+});
+
+
 }
 
-function growTextBox() {
-  // console.log('is this thing on')
-  // Get all taskInput elements
-  const taskInputs = document.querySelectorAll('#taskInput');
+// function growTextBox() {
+//   console.log("firing")
+//   // get parent element that contains the #taskInput element
+//   const parent = document.querySelector("#todo-item");
 
-  // Loop through each taskInput element
-  taskInputs.forEach(taskInput => {
-    // Add an event listener to the taskInput element
-    taskInput.addEventListener('input', function (event) {
-      // Get the taskSpan element that is a sibling of the taskInput element
-      const taskSpan = taskInput.parentElement.querySelector('#taskSpan');
-      taskSpan.innerHTML = this.value.replace(/\s/g, '&nbsp;');
-      this.style.width = taskSpan.offsetWidth + 'px';
-    });
-  })
-}
+//   parent.addEventListener("input", (e) => {
+//     // Check if the event target is a #taskInput element
+//     if (e.target && e.target.id === "taskInput") {
+//       // Get the taskSpan element that is a sibling of the taskInput element
+//       const taskSpan = e.target.parentElement.querySelector("#taskSpan");
+//       taskSpan.innerHTML = e.target.value.replace(/\s/g, "&nbsp;");
+//       // Set the width of the #taskInput element based on the width of its corresponding #taskSpan element
+//       e.target.style.width = taskSpan.offsetWidth + "px";
+//     }
+//   });
+// }
 
 function handleCheckboxClick(taskInput, checked) {
   // Get the corresponding checked element
@@ -158,11 +175,11 @@ function getTime() {
 //  console.log(time);
 
  if (time < 12) {
-  timeOfDay.innerHTML = "Good morning, ";
+  timeOfDay.innerHTML = "GOOD MORNING, ";
  } else if (time >= 12 && time < 17) {
-  timeOfDay.innerHTML = "Good afternoon, ";
+  timeOfDay.innerHTML = "GOOD AFTERNOON, ";
  } else if (time >= 17 && time <= 24) {
-  timeOfDay.innerHTML = "Good evening, ";
+  timeOfDay.innerHTML = "GOOD EVENING, ";
  }
 }
 

@@ -1,24 +1,52 @@
+* body{
+  background-color: #ffc903 !important;
+}
+
 body {
  box-sizing: border-box;
  margin: 0;
  padding: 0;
  font-family: "Poppins", sans-serif;
- color: #f5f5f5;
- background-color: #121212;
+ color: #000;
+ background-color: #ffc903;
  overflow: hidden;
  display: flex;
  justify-content: center;
  align-items: center;
  height: 100vh;
+ width: 100vw;
+ background: url(https://opendoodles.s3-us-west-1.amazonaws.com/coffee.svg) no-repeat bottom right, 
+ url(https://opendoodles.s3-us-west-1.amazonaws.com/petting.svg) no-repeat top left;
+ /* background-size: cover; */
+ background-size: 25%;
+}
+
+body::before {
+  background-image: url(https://opendoodles.s3-us-west-1.amazonaws.com/coffee.svg);
+  background-size: 150%;
+}
+
+::-webkit-scrollbar {
+ width: 12px;
+ height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+ background-color: #ff5678;
+ border-radius: 10px;
+ border: 20px solid #000;
+ border-width: 3px;
 }
 
 .app {
- background: linear-gradient(#af1dcc, #3ca9c4);
+ background-color: #3efda7;
  width: 60%;
  height: 90%;
  border-radius: 0.5rem;
  padding: 15px;
  overflow-y: scroll;
+ box-shadow: 15px 15px 1px rgb(0, 0, 0);
+ border: 3px solid rgb(0, 0, 0);
 }
 
 input:not([type="radio"]):not([type="checkbox"]),
@@ -43,8 +71,8 @@ input[type="radio"] {
  height: 20px;
  margin: 10px;
  border-radius: 50%;
- border: 2px solid #121212;
- box-shadow: 0px 0px 5px #ffffff;
+ border: 2px solid #000;
+ box-shadow: 0px 0px 5px #000;
  cursor: pointer;
 }
 
@@ -54,7 +82,7 @@ input[type="radio"] {
  opacity: 0;
  width: 0px;
  height: 0px;
- background-color: #121212;
+ background-color: #000;
  box-shadow: 0px 0px 5px #ffffff;
  border-radius: 50%;
  transition: 0.2s ease-in-out;
@@ -73,7 +101,10 @@ h2,
 h1 {
  flex: 1 1 0%;
  min-width: 0;
- font-weight: 700;
+ /* color: #7b4397; */
+ font-weight: 1000;
+ /* font-size: 1.5em; */
+ margin-top: 20px;
 }
 
 .form-control {
@@ -96,17 +127,25 @@ input {
  box-shadow: 0 1px 3px #1212129c;
 }
 
-#newTask {
- display: flex;
- align-items: center;
- width: 60%;
- height: 2.5rem;
-}
-
 #newtaskLabel {
  display: flex;
  align-items: center;
  padding: 1rem;
+ color: #000;
+ font-weight: 1000;
+}
+
+#newTask {
+ display: flex;
+ align-items: center;
+ width: 60%;
+ padding: 5px;
+ height: 2.5rem;
+ background-color: #9c7bff;
+ box-shadow: 6px 6px 1px rgb(0, 0, 0);
+ border: 3px solid black;
+ color: #000;
+ font-weight: 800;
 }
 
 button,
@@ -123,21 +162,23 @@ button::after {
 }
 
 .fa-plus {
- background-color: #121212;
- color: #f5f5f5;
+ background-color: #ff5678;
+ color: #000;
  padding: 6px;
  border-radius: 0.5rem;
- border: none;
+ box-shadow: 3px 3px 1px rgb(0, 0, 0);
+ border: 3px solid black;
  outline: none;
 }
 
 .fa-pen-to-square,
 .fa-trash {
- background-color: #121212;
- color: #f5f5f5;
+ background-color: #ff5678;
+ color: #000;
+ box-shadow: 3px 3px 1px rgb(0, 0, 0);
+ border: 3px solid black;
  padding: 6px;
  border-radius: 0.5rem;
- border: none;
  outline: none;
 }
 
@@ -146,20 +187,22 @@ button::after {
 }
 
 #taskInput {
-  width: 80%;
-  padding: 0.3em 0.3em;
-}
-
-.taskInput.done {
-  text-decoration: line-through;
-  color: #12121279;
+ min-width: 90%;
+ padding: 0.3em 0.3em;
+ background-color: #9c7bff;
+ box-shadow: 6px 6px 1px rgb(0, 0, 0);
+ border: 3px solid black;
+ color: #000;
+ font-weight: 800;
 }
 
 #taskSpan {
- position: absolute;
- left: -9999px;
- display: inline-block;
- min-width: 80%;
+ min-width: 100px;
+}
+
+.taskInput.done {
+ text-decoration: line-through;
+ color: #12121279;
 }
 
 #todo-item {
@@ -167,8 +210,6 @@ button::after {
  align-items: center;
  justify-content: flex-start;
 }
-
-
 
 #todo-content {
  flex: 1 1 0%;
