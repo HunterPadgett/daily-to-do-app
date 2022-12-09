@@ -87,35 +87,17 @@ function displayTodos() {
   check.forEach((button) => button.addEventListener("click", () => handleCheckboxClick(button.parentElement.parentElement.querySelector("#taskInput"), button)));
 
   
-taskInputs.forEach((taskInput) => {
-  taskInput.addEventListener("input", (e) => {
-    // Use e.target instead of this to reference the input element
-    const input = e.target;
-    // Set the width of the #taskInput element based on its scrollWidth
-    input.style.width = input.scrollWidth + "px";
-    console.log(input.scrollWidth);
+  taskInputs.forEach((taskInput) => {
+    taskInput.addEventListener("input", (e) => {
+      // Use e.target instead of this to reference the input element
+      const input = e.target;
+      // Set the width of the #taskInput element based on its scrollWidth
+      input.style.width = input.scrollWidth + "px";
+      console.log(input.scrollWidth);
+    });
   });
-});
-
-
 }
 
-// function growTextBox() {
-//   console.log("firing")
-//   // get parent element that contains the #taskInput element
-//   const parent = document.querySelector("#todo-item");
-
-//   parent.addEventListener("input", (e) => {
-//     // Check if the event target is a #taskInput element
-//     if (e.target && e.target.id === "taskInput") {
-//       // Get the taskSpan element that is a sibling of the taskInput element
-//       const taskSpan = e.target.parentElement.querySelector("#taskSpan");
-//       taskSpan.innerHTML = e.target.value.replace(/\s/g, "&nbsp;");
-//       // Set the width of the #taskInput element based on the width of its corresponding #taskSpan element
-//       e.target.style.width = taskSpan.offsetWidth + "px";
-//     }
-//   });
-// }
 
 function handleCheckboxClick(taskInput, checked) {
   // Get the corresponding checked element
