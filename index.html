@@ -34,18 +34,18 @@
    rel="stylesheet"
   />
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>Don't Be Lazy</title>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <!-- 32×32 -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?" />
   <!-- 180×180 -->
   <link rel="manifest" href="/images/site.webmanifest" />
+  <title>Don't Be Lazy</title>
  </head>
 
  <body>
   <div class="app">
-   <h1 class="mb-3 text-center">
+   <h1 class="mb-3 text-center" id="heading">
     <span id="timeOfDay"></span>
     WHAT'S ON YOUR LIST TODAY?
    </h1>
@@ -60,7 +60,7 @@
     </div>
    </form>
 
-   <h2 class="text-center mt-5">TO DO LIST</h2>
+   <h2 class="text-center mt-5" id="list">TO DO LIST</h2>
    <div id="tasks" class="m-1">
     <div id="todo-item" class="">
      <div id="todo-content" class="">
