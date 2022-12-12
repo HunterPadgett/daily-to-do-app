@@ -75,6 +75,7 @@ body {
  height: 90%;
  border-radius: 0.5rem;
  padding: 15px;
+ margin: auto;
  overflow-y: scroll;
  box-shadow: 15px 15px 1px rgb(0, 0, 0);
  border: 3px solid rgb(0, 0, 0);
@@ -83,6 +84,7 @@ body {
 @media screen and (max-width: 1281px) {
  /* CSS styles for screens smaller than 1281px (nest hub max) go here */
  .app {
+  margin: auto;
   width: 85%;
   height: 90%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
@@ -95,6 +97,7 @@ body {
 @media screen and (max-width: 1025px) {
  /* CSS styles for screens smaller than 1281px (nest hub) go here */
  .app {
+  margin: auto;
   width: 85%;
   height: 90%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
@@ -107,6 +110,7 @@ body {
 @media screen and (max-width: 821px) {
  /* CSS styles for screens smaller than 821px (ipad) go here */
  .app {
+  margin: auto;
   width: 90%;
   height: 90%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
@@ -127,10 +131,20 @@ body {
   background-size: 40%;
   background-position-y: 65%;
   padding: 2px;
+  margin: auto !important;
   box-shadow: 10px 10px 1px rgb(0, 0, 0);
   border: 3px solid rgb(0, 0, 0);
+  
  }
 }
+
+/* #todo-items {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+} */
 
 input:not([type="radio"]):not([type="checkbox"]),
 button {
@@ -441,6 +455,14 @@ button::after {
  }
 }
 
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #delete {
+  margin-left: 0px !important;
+  padding-left: 5px !important;
+ }
+}
+
 button i {
  display: flex;
  justify-content: center;
@@ -489,6 +511,7 @@ button i {
 @media screen and (max-width: 415px) {
  /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #tasks {
+  margin: auto !important;
  }
 }
 
@@ -515,7 +538,7 @@ button i {
 @media screen and (max-width: 415px) {
  /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #taskInput {
-  width: 95% !important;
+  width: 100% !important;
   font-weight: 700;
   font-size: 0.9rem;
   box-shadow: 3px 3px 1px rgb(0, 0, 0);
@@ -548,4 +571,5 @@ button i {
 
 #todo-content {
  flex: 1 1 0%;
+ 
 }

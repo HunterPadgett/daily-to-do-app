@@ -11,6 +11,8 @@ const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
+
+
 window.addEventListener("load", () => {
  form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -29,9 +31,8 @@ window.addEventListener("load", () => {
   displayTodos();
   // growTextBox();
  });
- 
+
  displayTodos();
-//  growTextBox();
  getTime();
 });
 
