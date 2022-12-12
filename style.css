@@ -44,7 +44,7 @@ body {
  }
 }
 
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 415px) {
  /* CSS styles for screens smaller than 1 (s20 ultra) go here */
  body {
   background: none;
@@ -115,8 +115,8 @@ body {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  .app {
   width: 90%;
   height: 95%;
@@ -225,8 +225,8 @@ h1 {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #heading {
   font-size: 1.5rem !important;
   /* margin: 10px !important; */
@@ -242,8 +242,8 @@ h1 {
  align-items: center;
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  .form-control {
   background-color: transparent;
   border: none;
@@ -274,8 +274,8 @@ input {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #newtaskLabel {
   font-size: 1rem !important;
   padding: 2px !important;
@@ -308,8 +308,8 @@ input {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #newTask {
   width: 100% !important;
   height: 2.6rem;
@@ -327,8 +327,8 @@ input {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #list, h2 {
   font-size: 1.5rem !important;
   padding: none !important;
@@ -368,8 +368,8 @@ button::after {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #edit,
  #delete,
  #submit {
@@ -377,8 +377,8 @@ button::after {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #edit {
   display: none;
  }
@@ -409,8 +409,8 @@ button::after {
  outline: none;
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  .fa-pen-to-square,
  .fa-trash,
  .fa-plus {
@@ -430,8 +430,8 @@ button::after {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
   #tasks {
   padding: 2px;
  }
@@ -456,8 +456,8 @@ button::after {
  }
 }
 
-@media screen and (max-width: 413px) {
- /* CSS styles for screens smaller than 413px (s20 ultra) go here */
+@media screen and (max-width: 415px) {
+ /* CSS styles for screens smaller than 415px (s20 ultra) go here */
  #taskInput {
   width: 100% !important;
   font-size: 1.25rem;
