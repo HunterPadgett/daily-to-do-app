@@ -137,13 +137,18 @@ button {
  appearance: none;
  border: none;
  outline: none;
- /* background: none; */
+ background: none;
  cursor: initial;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
  display: none;
+}
+
+input[type="radio"]:checked:after,
+input[type="checkbox"]:checked:after {
+ display: none !important;
 }
 
 #bubble {
