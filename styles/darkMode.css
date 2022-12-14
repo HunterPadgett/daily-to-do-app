@@ -1,0 +1,622 @@
+body {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: "Poppins", sans-serif;
+ color: #000;
+ background-color: #5d4577 !important;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ width: 100vw;
+ background: url(https://opendoodles.s3-us-west-1.amazonaws.com/coffee.svg)
+   no-repeat bottom left,
+  url(https://opendoodles.s3-us-west-1.amazonaws.com/petting.svg) no-repeat top
+   left,
+  url(https://opendoodles.s3-us-west-1.amazonaws.com/dancing.svg) no-repeat
+   right;
+ /* background-size: cover; */
+ background-size: 21%;
+}
+
+@media screen and (max-width: 1025px) {
+ /* CSS styles for screens smaller than 1281px (nest hub) go here */
+ body {
+  background: url(https://opendoodles.s3-us-west-1.amazonaws.com/coffee.svg)
+    no-repeat left bottom,
+   url(https://opendoodles.s3-us-west-1.amazonaws.com/petting.svg) no-repeat top
+    left;
+  background-size: 10% !important;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ body {
+  background-size: 12% !important;
+  background-position-x: -3px !important;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 1 (s20 ultra) go here */
+ body {
+  background: none;
+ }
+}
+
+::-webkit-scrollbar {
+ width: 12px;
+ height: 12px;
+}
+::-webkit-scrollbar-thumb {
+ background-color: #ff5678;
+ border-radius: 10px;
+ border: 20px solid #000;
+ border-width: 3px;
+}
+
+#darkmodeToggle {
+ width: 50px;
+ height: 26px;
+ position: absolute;
+ top: 2%;
+ left: 96%;
+ display: block;
+ background: #ebebeb;
+ border: 2px solid black;
+ border-radius: 900px;
+ box-shadow: 5px 5px 1px rgb(0, 0, 0);
+ cursor: pointer;
+}
+
+#darkmodeToggle::after {
+ content: "";
+ width: 18px;
+ height: 18px;
+ position: absolute;
+ top: 2px;
+ left: 3px;
+ background: #3efda7;
+ border: 2px solid black;
+ border-radius: 180px;
+ box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#darkmode {
+ width: 0;
+ height: 0;
+ visibility: hidden;
+}
+
+#darkmode:checked + #darkmodeToggle {
+ background: #ff5678;
+}
+
+#darkmode:checked + #darkmodeToggle:after {
+ left: 94%;
+ transform: translateX(-100%);
+ background: #0e2f88;
+}
+
+#darkmodeToggle,
+#darkmodeToggle:after {
+ transition: 0.4s;
+}
+
+#darkmodeToggle:active:after {
+ width: 30px;
+}
+
+.app {
+ background-color: #383535 !important;
+ background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+  no-repeat center;
+ background-size: 23%;
+ background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+  no-repeat center;
+ background-size: 19%;
+ background-position-y: 65%;
+ width: 70%;
+ height: 90%;
+ border-radius: 0.5rem;
+ padding: 15px;
+ margin: auto;
+ overflow-y: scroll;
+ box-shadow: 15px 15px 1px rgb(0, 0, 0);
+ border: 3px solid rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1281px) {
+ /* CSS styles for screens smaller than 1281px (nest hub max) go here */
+ .app {
+  margin: auto;
+  width: 85%;
+  height: 90%;
+  background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+   no-repeat center;
+  background-size: 19%;
+  background-position-y: 70%;
+ }
+}
+
+@media screen and (max-width: 1025px) {
+ /* CSS styles for screens smaller than 1281px (nest hub) go here */
+ .app {
+  margin: auto;
+  width: 85%;
+  height: 90%;
+  background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+   no-repeat center;
+  background-size: 19%;
+  background-position-y: 85%;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ .app {
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+   no-repeat center;
+  background-size: 30%;
+  background-position-y: 75%;
+  padding: 2px;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ .app {
+  width: 88%;
+  height: 70%;
+  background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
+   no-repeat center;
+  background-size: 40%;
+  background-position-y: 65%;
+  padding: 2px;
+  margin: auto !important;
+  box-shadow: 10px 10px 1px rgb(0, 0, 0);
+  border: 3px solid rgb(0, 0, 0);
+ }
+}
+
+/* #todo-items {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+} */
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+ appearance: none;
+ border: none;
+ outline: none;
+ background: none;
+ cursor: initial;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+ display: none;
+}
+
+input[type="radio"]:checked:after,
+input[type="checkbox"]:checked:after {
+ display: none;
+}
+
+#bubble {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 20px;
+ height: 20px;
+ margin: 10px;
+ border-radius: 50%;
+ border: 2px solid #f2f2f2be;
+ box-shadow: 0px 0px 5px #f2f2f2be;
+ cursor: pointer;
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #bubble {
+  width: 20px;
+  height: 18px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid #f2f2f2be;
+  box-shadow: 0px 0px 5px #f2f2f2be;
+ }
+}
+
+#bubble::after {
+ content: "";
+ display: block;
+ opacity: 0;
+ width: 0px;
+ height: 0px;
+ background-color: #f2f2f2be;
+ box-shadow: 0px 0px 5px #ffffff;
+ border-radius: 50%;
+ transition: 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #bubble::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  background-color: #f2f2f2be;
+  box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+ }
+}
+
+input:checked ~ #bubble::after {
+ width: 10px;
+ height: 10px;
+ opacity: 1;
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ input:checked ~ #bubble::after {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+ }
+}
+
+h2,
+h1 {
+ flex: 1 1 0%;
+ min-width: 0;
+ font-weight: 800;
+ color: #f2f2f2;
+}
+
+@media screen and (max-width: 1281px) {
+ /* CSS styles for screens smaller than 1281px (nest hub max) go here */
+ h2,
+ h1 {
+  flex: 1 1 0%;
+  min-width: 0;
+  /* color: #7b4397; */
+  font-weight: 1000;
+  /* font-size: 1.5em; */
+  /* margin-top: 15px; */
+ }
+}
+
+@media screen and (max-width: 1025px) {
+ /* CSS styles for screens smaller than 1025px (nest hub max) go here */
+ h2,
+ h1 {
+  flex: 1 1 0%;
+  min-width: 0;
+
+  font-weight: 1000;
+  /* font-size: 1.5em; */
+  /* margin-top: 12px; */
+ }
+}
+
+@media screen and (max-width: 1025px) {
+ /* CSS styles for screens smaller than 1025px (nest hub max) go here */
+ #heading {
+  font-size: 2.2rem;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (nest hub max) go here */
+ #heading {
+  font-size: 2.5rem !important;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #heading {
+  font-size: 1.5rem !important;
+  padding: 0px 5px;
+  margin: 15px 0px !important;
+ }
+}
+
+.form-control {
+ background-color: transparent;
+ border: none;
+ display: flex;
+ justify-content: center;
+ justify-content: space-evenly;
+ align-items: center;
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ .form-control {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  padding: none !important;
+ }
+}
+
+label {
+ color: #f5f5f5;
+ font-size: 1.15rem;
+}
+
+input {
+ padding: 3px;
+ background-color: #f5f5f5a9;
+ border-radius: 0.5rem;
+ box-shadow: 0 1px 3px #1212129c;
+}
+
+#newtaskLabel {
+ display: flex;
+ align-items: center;
+ padding: 1rem;
+ color: #f2f2f2;
+ font-weight: 1000;
+ font-size: 1.3rem;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #newtaskLabel {
+  font-size: 1.4rem !important;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #newtaskLabel {
+  font-size: 1rem !important;
+  padding: 2px !important;
+  /* padding-left: none !important; */
+  margin: none !important;
+ }
+}
+
+#newTask {
+ display: flex;
+ align-items: center;
+ width: 60%;
+ padding: 5px;
+ height: 2.5rem;
+ height: 2.8rem;
+ background-color: #0e2f88;
+ box-shadow: 6px 6px 1px rgb(0, 0, 0);
+ border: 3px solid black;
+ color: #f2f2f2;
+ font-weight: 800;
+ font-size: 1.2rem;
+ overflow-y: scroll;
+}
+
+@media screen and (max-width: 1025px) {
+ /* CSS styles for screens smaller than 1281px (nest hub max) go here */
+ #newTask {
+  display: flex;
+  align-items: flex-start;
+  width: 65%;
+  height: 2.9rem;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #newTask {
+  width: 100% !important;
+  height: 34.2px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 1px rgb(0, 0, 0);
+  border: 2px solid black;
+ }
+}
+
+#list {
+ /* margin-bottom: 5px; */
+ font-weight: 1000;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #list {
+  font-size: 1.9rem !important;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #list {
+  font-size: 1.9rem !important;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #list,
+ h2 {
+  font-size: 1.4rem !important;
+  padding: none !important;
+  margin: none !important;
+ }
+}
+
+button,
+button:active,
+button:focus,
+button::after {
+ border: transparent;
+ outline: none;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #edit,
+ #delete,
+ #submit {
+  font-size: 1.1rem;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #edit,
+ #delete,
+ #submit {
+  font-size: 0.8rem;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #edit {
+  display: none;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #delete {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #delete {
+  margin-left: 0px !important;
+  padding-left: 5px !important;
+ }
+}
+
+button {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.btn:hover {
+ scale: 1.1;
+ transition: 0.2s ease-in-out;
+}
+
+.fa-pen-to-square,
+.fa-trash,
+.fa-plus {
+ background-color: #ff5678;
+ color: #000;
+ box-shadow: 3px 3px 1px rgb(0, 0, 0);
+ border: 3px solid black;
+ padding: 6px;
+ border-radius: 0.5rem;
+ outline: none;
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ .fa-pen-to-square,
+ .fa-trash,
+ .fa-plus {
+  box-shadow: 2px 2px 1px rgb(0, 0, 0);
+  border: 2px solid black;
+  padding: 5px;
+ }
+}
+
+#tasks {
+ padding: 1rem;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #tasks {
+  padding: 0.5rem;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #tasks {
+  margin: auto !important;
+ }
+}
+
+#taskInput {
+ width: 92%;
+ padding: 0.3em 0.3em;
+ background-color: #0e2f88;
+ box-shadow: 6px 6px 1px rgb(0, 0, 0);
+ border: 3px solid black;
+ color: #f2f2f2ec;
+ font-weight: 800;
+ font-size: 1.2rem;
+ overflow-y: scroll;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #taskInput {
+  width: 95% !important;
+  font-size: 1.1rem;
+ }
+}
+
+@media screen and (max-width: 430px) {
+ /* CSS styles for screens smaller than 430px (s20 ultra) go here */
+ #taskInput {
+  width: 100% !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 1px rgb(0, 0, 0);
+  border: 2px solid black;
+ }
+}
+
+#taskSpan {
+ min-width: 100px;
+}
+
+.taskInput.done {
+ text-decoration: line-through 2.2px;
+ color: #12121279;
+}
+
+#todo-item {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+}
+
+@media screen and (max-width: 821px) {
+ /* CSS styles for screens smaller than 821px (ipad) go here */
+ #todo-actions {
+  margin: 4px 0 4px 3px !important;
+  padding: 4px 0 4px 3px !important;
+ }
+}
+
+#todo-content {
+ flex: 1 1 0%;
+}

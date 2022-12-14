@@ -14,6 +14,7 @@ const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
 const colorToggle = document.querySelector("#darkmode");
+let currentLink = document.getElementById("cssLink");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 let darkMode = localStorage.getItem("darkMode")
 
@@ -41,7 +42,7 @@ window.addEventListener("load", () => {
 // checks to see if dark mode was enabled before reload and returns it to dark mode state if it was
  if (darkMode === "enabled") {
     colorToggle.checked = true;
-    toggleDarkMode();
+    currentLink.href = "/styles/darkMode.css";
   }
 
  displayTodos();
@@ -112,13 +113,16 @@ function displayTodos() {
 
   colorToggle.addEventListener('change', () => {
     darkMode = localStorage.getItem("darkMode")
+    let currentLink = document.getElementById("cssLink");
   // console.log("sdfsdfs")
     if(colorToggle.checked) {
       console.log(darkMode)
-      toggleDarkMode();
+      localStorage.setItem("darkMode", "enabled");
+      currentLink.href = "/styles/darkMode.css";
     } else {
       console.log(darkMode)
-      toggleLightMode();
+      localStorage.setItem("darkMode", null);
+      currentLink.href = "/styles/lightMode.css";
     }
  });
 }
@@ -187,46 +191,4 @@ function getTime() {
  } else if (time >= 17 && time <= 24) {
   timeOfDay.innerHTML = "GOOD EVENING, ";
  }
-}
-
-function toggleDarkMode() {
-
-  const taskInputs = document.querySelectorAll("#taskInput");
-
-  // 1. add the darkmode css
-  document.body.classList.add("darkmodeBody");
-  app.style.backgroundColor = ""
-  app.classList.add("darkmodeApp");
-  heading.classList.add("darkmodeText");
-  newTaskLabel.classList.add("darkmodeText");
-  list.classList.add("darkmodeText");
-  // newTask.classList.add("darkmodeInputs");
-  // taskInputs.forEach((taskInput) => {
-  //   taskInput.classList.remove("lightmodeInputs");
-  //   taskInput.classList.add("darkmodeInputs");
-  // });
-
-  
-  // 2. update darkMode in localStorage
-  localStorage.setItem("darkMode", "enabled");
-}
-
-function toggleLightMode() {
-
-  const taskInputs = document.querySelectorAll("#taskInput");
-  
-  // 1. remove the darkmode css
-  document.body.classList.remove("darkmodeBody");
-  app.style.backgroundColor = ""
-  app.classList.add("lightmodeApp");
-  heading.classList.remove("darkmodeText");
-  newTaskLabel.classList.remove("darkmodeText");
-  list.classList.remove("darkmodeText");
-  // taskInputs.forEach((taskInput) => {
-  //   taskInput.classList.add("lightmodeInputs");
-  //   taskInput.classList.remove("darkmodeInputs");
-  // });
-  
-  // 2. update darkMode in localStorage
-  localStorage.setItem("darkMode", null);
 }
