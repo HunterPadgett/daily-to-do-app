@@ -43,6 +43,9 @@ window.addEventListener("load", () => {
  if (darkMode === "enabled") {
     colorToggle.checked = true;
     currentLink.href = "styles/darkMode.css";
+  } else {
+    colorToggle.checked = false;
+    currentLink.href = "styles/lightMode.css";
   }
 
  displayTodos();
