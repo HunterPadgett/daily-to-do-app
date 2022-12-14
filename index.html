@@ -44,52 +44,55 @@
  </head>
 
  <body>
-  <div class="visitCount">
+  <div>
+   <input type="checkbox" id="darkmode" />
+   <label for="darkmode" id="darkmodeToggle"></label>
   </div>
-  <div class="app">
-   <h1 class="mb-4 mt-4 text-center" id="heading">
-    <span id="timeOfDay"></span>
-    WHAT'S ON YOUR LIST TODAY?
-   </h1>
 
-   <form id="form" class="">
-    <div class="form-control d-flex">
-     <label for="newTask" id="newtaskLabel">ADD TASK</label>
-     <input type="text" name="newTask" id="newTask" required />
-     <button type="submit" id="submit" class="btn">
-      <i class="fas fa-plus"></i>
-     </button>
-    </div>
-   </form>
+   <div class="app">
+    <h1 class="mb-4 mt-4 text-center" id="heading">
+     <span id="timeOfDay"></span>
+     WHAT'S ON YOUR LIST TODAY?
+    </h1>
 
-   <h2 class="text-center mt-4 mb-4" id="list">TO DO LIST</h2>
-   <div id="tasks" class="">
-    <div id="todo-item" class="">
-     <div id="todo-content" class="">
-      <label class="d-flex align-items-center">
-       <input type="checkbox" id="checked" />
-       <span id="bubble" type="checkbox" class=""></span>
-       <input
-        type="text"
-        id="taskInput"
-        contenteditable=""
-        class="taskInput done"
-       />
-       <span id="taskSpan"></span>
-      </label>
+    <form id="form" class="">
+     <div class="form-control d-flex">
+      <label for="newTask" id="newtaskLabel">ADD TASK</label>
+      <input type="text" name="newTask" id="newTask" required />
+      <button type="submit" id="submit" class="btn">
+       <i class="fas fa-plus"></i>
+      </button>
      </div>
+    </form>
 
-     <div id="todo-actions" class="m-1 p-1">
-      <button id="edit" class="btn">
-       <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button id="delete" class="btn">
-       <i class="fa-solid fa-trash"></i>
-      </button>
+    <h2 class="text-center mt-4 mb-4" id="list">TO DO LIST</h2>
+    <div id="tasks" class="">
+     <div id="todo-item" class="">
+      <div id="todo-content" class="">
+       <label class="d-flex align-items-center">
+        <input type="checkbox" id="checked" />
+        <span id="bubble" type="checkbox" class=""></span>
+        <input
+         type="text"
+         id="taskInput"
+         contenteditable=""
+         class="taskInput done"
+        />
+        <span id="taskSpan"></span>
+       </label>
+      </div>
+
+      <div id="todo-actions" class="m-1 p-1">
+       <button id="edit" class="btn">
+        <i class="fa-solid fa-pen-to-square"></i>
+       </button>
+       <button id="delete" class="btn">
+        <i class="fa-solid fa-trash"></i>
+       </button>
+      </div>
      </div>
     </div>
    </div>
-  </div>
 
   <script src="index.js"></script>
  </body>

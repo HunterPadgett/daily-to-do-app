@@ -1,4 +1,8 @@
 const form = document.getElementById("form");
+const app = document.querySelector(".app");
+const heading = document.querySelector("#heading");
+const newTaskLabel = document.querySelector("#newtaskLabel");
+const list = document.querySelector("#list");
 const newTask = document.getElementById("newTask");
 const tasks = document.getElementById("tasks");
 const submit = document.getElementById("submit");
@@ -9,7 +13,9 @@ const todoItem = document.getElementById("todo-item");
 const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
+const colorToggle = document.querySelector("#darkmode");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
+let darkMode = localStorage.getItem("darkMode")
 
 
 
@@ -31,6 +37,12 @@ window.addEventListener("load", () => {
   displayTodos();
   // growTextBox();
  });
+
+// checks to see if dark mode was enabled before reload and returns it to dark mode state if it was
+ if (darkMode === "enabled") {
+    colorToggle.checked = true;
+    toggleDarkMode();
+  }
 
  displayTodos();
  getTime();
@@ -70,10 +82,11 @@ function displayTodos() {
   const deleteBtns = document.querySelectorAll("#delete");
   const check = document.querySelectorAll("#checked");
   const taskInputs = document.querySelectorAll("#taskInput");
+  
 
   // eventlisteners for checkboxes, edit buttons, and delete buttons
 
-  // This way, when the editTask and deleteTask functions are called, the correct taskInput element will be passed as an argument and used in those functions.
+  // This way, when the editTask, deleteTask, and checkbox functions are called, the correct taskInput element will be passed as an argument and used in those functions.
 
   editBtns.forEach((button) => {
     button.addEventListener("click", () =>
@@ -87,7 +100,6 @@ function displayTodos() {
 
   check.forEach((button) => button.addEventListener("click", () => handleCheckboxClick(button.parentElement.parentElement.querySelector("#taskInput"), button)));
 
-  
   taskInputs.forEach((taskInput) => {
     taskInput.addEventListener("input", (e) => {
       // Use e.target instead of this to reference the input element
@@ -97,6 +109,18 @@ function displayTodos() {
       console.log(input.scrollWidth);
     });
   });
+
+  colorToggle.addEventListener('change', () => {
+    darkMode = localStorage.getItem("darkMode")
+  // console.log("sdfsdfs")
+    if(colorToggle.checked) {
+      console.log(darkMode)
+      toggleDarkMode();
+    } else {
+      console.log(darkMode)
+      toggleLightMode();
+    }
+ });
 }
 
 
@@ -150,7 +174,6 @@ function editTask(taskInput) {
   });
 }
 
-
 // function to display morning, afternoon evening
 function getTime() {
  let date = new Date();
@@ -166,3 +189,44 @@ function getTime() {
  }
 }
 
+function toggleDarkMode() {
+
+  const taskInputs = document.querySelectorAll("#taskInput");
+
+  // 1. add the darkmode css
+  document.body.classList.add("darkmodeBody");
+  app.style.backgroundColor = ""
+  app.classList.add("darkmodeApp");
+  heading.classList.add("darkmodeText");
+  newTaskLabel.classList.add("darkmodeText");
+  list.classList.add("darkmodeText");
+  // newTask.classList.add("darkmodeInputs");
+  // taskInputs.forEach((taskInput) => {
+  //   taskInput.classList.remove("lightmodeInputs");
+  //   taskInput.classList.add("darkmodeInputs");
+  // });
+
+  
+  // 2. update darkMode in localStorage
+  localStorage.setItem("darkMode", "enabled");
+}
+
+function toggleLightMode() {
+
+  const taskInputs = document.querySelectorAll("#taskInput");
+  
+  // 1. remove the darkmode css
+  document.body.classList.remove("darkmodeBody");
+  app.style.backgroundColor = ""
+  app.classList.add("lightmodeApp");
+  heading.classList.remove("darkmodeText");
+  newTaskLabel.classList.remove("darkmodeText");
+  list.classList.remove("darkmodeText");
+  // taskInputs.forEach((taskInput) => {
+  //   taskInput.classList.add("lightmodeInputs");
+  //   taskInput.classList.remove("darkmodeInputs");
+  // });
+  
+  // 2. update darkMode in localStorage
+  localStorage.setItem("darkMode", null);
+}
