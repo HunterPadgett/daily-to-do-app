@@ -14,7 +14,7 @@ const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
 const taskSpan = document.getElementsByClassName("taskSpan");
 const colorToggle = document.querySelector("#darkmode");
-let currentLink = document.getElementById("cssLink");
+const currentLink = document.getElementById("cssLink");
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 let darkMode = localStorage.getItem("darkMode")
 
@@ -40,6 +40,8 @@ window.addEventListener("load", () => {
  });
 
 // checks to see if dark mode was enabled before reload and returns it to dark mode state if it was
+let currentLink = document.getElementById("cssLink");
+
  if (darkMode === "enabled") {
     colorToggle.checked = true;
     currentLink.href = "styles/darkMode.css";

@@ -72,6 +72,38 @@ body {
  cursor: pointer;
 }
 
+@media screen and (max-width: 1281px) {
+ #darkmodeToggle {
+  width: 50px;
+  height: 26px;
+  position: absolute;
+  top: 2%;
+  left: 94%;
+  display: block;
+  background: #ebebeb;
+  border: 2px solid black;
+  border-radius: 900px;
+  box-shadow: 5px 5px 1px rgb(0, 0, 0);
+  cursor: pointer;
+ }
+}
+
+@media screen and (max-width: 821px) {
+ #darkmodeToggle {
+  width: 50px;
+  height: 26px;
+  position: absolute;
+  top: 1%;
+  left: 88%;
+  display: block;
+  background: #ebebeb;
+  border: 2px solid black;
+  border-radius: 900px;
+  box-shadow: 5px 5px 1px rgb(0, 0, 0);
+  cursor: pointer;
+ }
+}
+
 @media screen and (max-width: 430px) {
  /* CSS styles for screens smaller than 1 (s20 ultra) go here */
  #darkmodeToggle {
@@ -151,7 +183,7 @@ body {
  .app {
   margin: auto;
   width: 85%;
-  height: 90%;
+  height: 85%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
    no-repeat center;
   background-size: 19%;
@@ -164,7 +196,7 @@ body {
  .app {
   margin: auto;
   width: 85%;
-  height: 90%;
+  height: 85%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
    no-repeat center;
   background-size: 19%;
