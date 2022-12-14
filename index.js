@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
 // checks to see if dark mode was enabled before reload and returns it to dark mode state if it was
  if (darkMode === "enabled") {
     colorToggle.checked = true;
-    currentLink.href = "/styles/darkMode.css";
+    currentLink.href = "styles/darkMode.css";
   }
 
  displayTodos();
@@ -118,11 +118,11 @@ function displayTodos() {
     if(colorToggle.checked) {
       console.log(darkMode)
       localStorage.setItem("darkMode", "enabled");
-      currentLink.href = "/styles/darkMode.css";
+      currentLink.href = "styles/darkMode.css";
     } else {
       console.log(darkMode)
       localStorage.setItem("darkMode", null);
-      currentLink.href = "/styles/lightMode.css";
+      currentLink.href = "styles/lightMode.css";
     }
  });
 }
