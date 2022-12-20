@@ -26,18 +26,19 @@ Deployed link: https://hunterpadgett.github.io/daily-to-do-app/
 
 ## Installation
 
-There are no dependencies for this app if you want to run it locally. 
+There are no dependencies for this app if you want to run it locally. Once you clone the repo you can run it on live-server.
 
 ## Usage
 
+Since there is no server-side packages to install I suggest using the deployed link to see the functionality.
 
+https://hunterpadgett.github.io/daily-to-do-app/
 
 ## Contribution and Attribution
 
-This was a solo project
+This was a solo project.
 
-Image attribution:<br>
-Illustrations are from https://www.opendoodles.com/
+Image attribution: https://www.opendoodles.com/
 
 ## Test Instructions
 
@@ -46,5 +47,5 @@ This project does not include any tests.
 ## Questions
 
 If you would like to see more of my work, checkout my GitHub repositories: https://github.com/HunterPadgett
-<br>
+
 If you have any additional questions, please contact me directly at: gizmokabanjo@gmail.com
