@@ -4,7 +4,7 @@
 
 ## Description
 
-Everyone get a little lazy every now and then. This web app is made to help you stay on track with your goals and daily tasks!
+Everyone gets a little lazy every now and then. This web app was made to help you stay on track with your goals and daily tasks!
 
 This is a client-side to-do web application built using vanilla JavaScript, custom CSS with neubrutalism UI inspiration, and HTML. It has the ability to create, read, update, and delete tasks, and it uses local storage to save the user's preference for light or dark mode and to keep tasks on the page after a refresh.
 
