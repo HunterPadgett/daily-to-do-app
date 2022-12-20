@@ -1,9 +1,10 @@
 # daily-to-do-app
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  ![HTML](https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/css3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![fontawesome](https://img.shields.io/badge/font%20awesome-%23339AF0.svg?&style=for-the-badge&logo=font%20awesome&logoColor=white) ![eslint](https://img.shields.io/badge/eslint-%234B32C3.svg?&style=for-the-badge&logo=eslint&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%237952B3.svg?&style=for-the-badge&logo=bootstrap&logoColor=white)  ![VisualStudio](https://img.shields.io/badge/visual%20studio-%235C2D91.svg?&style=for-the-badge&logo=visual%20studio&logoColor=white)
+
 ## Description
 
-A web developer's version of space invaders. Make your way though each level of code to earn status and make MVP!
+This is a client-side to-do application built using vanilla JavaScript, custom CSS, and HTML. It has the ability to create, read, update, and delete tasks, and it uses local storage to save the user's preference for light or dark mode and to keep tasks on the page after a refresh.
 
 ![image](https://user-images.githubusercontent.com/101753839/188037835-2c6e7e51-4ee9-4519-9223-a8a4fdc97264.png)
 
