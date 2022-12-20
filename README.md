@@ -6,7 +6,11 @@
 
 This is a client-side to-do application built using vanilla JavaScript, custom CSS, and HTML. It has the ability to create, read, update, and delete tasks, and it uses local storage to save the user's preference for light or dark mode and to keep tasks on the page after a refresh.
 
-![image](https://user-images.githubusercontent.com/101753839/188037835-2c6e7e51-4ee9-4519-9223-a8a4fdc97264.png)
+![image](https://user-images.githubusercontent.com/106113692/208712133-0c467bdf-119e-4526-9160-c51ddc420ddb.png)
+
+![image](https://user-images.githubusercontent.com/106113692/208712232-64568314-2cf3-4daf-b371-83590e2eb6c0.png)
+
+![image](https://user-images.githubusercontent.com/106113692/208712343-9aa0a752-29cc-45d7-90e4-ff11192c5c2c.png)
 
 ## Table of Contents
 
