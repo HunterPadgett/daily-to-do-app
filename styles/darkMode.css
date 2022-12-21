@@ -223,7 +223,7 @@ body {
  .app {
   position: absolute;
   width: 88%;
-  height: 80%;
+  height: 85%;
   top: 8%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
    no-repeat center;
