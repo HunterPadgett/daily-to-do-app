@@ -204,6 +204,11 @@ function getTime() {
 function handleTouch(e) {
   e.preventDefault();
   if (e.type === 'touchstart') {
-    submit.style.transform = "scale(0.7)"
+    submit.style.transform = "scale(0.85)";
+    submit.style.transition = "0.1s ease-in-out"
+  }
+  if (e.type === 'touchend') {
+    submit.style.transform = "scale(1.0)"
+    submit.style.transition = "0.1s ease-in-out"
   }
 }
