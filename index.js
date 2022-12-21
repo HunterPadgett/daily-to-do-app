@@ -88,12 +88,10 @@ function displayTodos() {
   const deleteBtns = document.querySelectorAll("#delete");
   const check = document.querySelectorAll("#checked");
   const taskInputs = document.querySelectorAll("#taskInput");
-  const submitBtn = document.getElementById("submit");
   
-
   // eventlisteners for checkboxes, edit buttons, and delete buttons
 
-  // This way, when the editTask, deleteTask, and checkbox functions are called, the correct taskInput element will be passed as an argument and used in those functions.
+  // This way, when the editTask, deleteTask, and checkbox functions are called, the correct      taskInput element will be passed as an argument and used in those functions.
 
   editBtns.forEach((button) => {
     button.addEventListener("click", () =>
