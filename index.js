@@ -88,6 +88,7 @@ function displayTodos() {
   const deleteBtns = document.querySelectorAll("#delete");
   const check = document.querySelectorAll("#checked");
   const taskInputs = document.querySelectorAll("#taskInput");
+  const submitBtn = document.getElementById("submit");
   
 
   // eventlisteners for checkboxes, edit buttons, and delete buttons
@@ -130,6 +131,10 @@ function displayTodos() {
       currentLink.href = "styles/lightMode.css";
     }
  });
+
+  document.addEventListener('touchstart', handleTouch);
+  document.addEventListener('touchmove', handleTouch);
+  document.addEventListener('touchend', handleTouch);
 }
 
 
@@ -196,4 +201,11 @@ function getTime() {
  } else if (time >= 17 && time <= 24) {
   timeOfDay.innerHTML = "GOOD EVENING, ";
  }
+}
+
+function handleTouch(e) {
+  e.preventDefault();
+  if (e.type === 'touchstart') {
+    submit.style.transform = "scale(0.7)"
+  }
 }
