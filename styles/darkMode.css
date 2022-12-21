@@ -110,7 +110,7 @@ body {
   width: 50px;
   height: 26px;
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 80%;
   display: block;
   background: #ebebeb;
@@ -223,8 +223,8 @@ body {
  .app {
   position: absolute;
   width: 88%;
-  height: 75%;
-  top: 10%;
+  height: 80%;
+  top: 8%;
   background: url(https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png)
    no-repeat center;
   background-size: 40%;
