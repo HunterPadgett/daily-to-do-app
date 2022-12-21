@@ -580,19 +580,6 @@ button {
  }
 }
 
-@media screen and (max-width: 1280px) {
- /* CSS styles for screens smaller than 821px (ipad) go here */
- /* Add a subtle button effect when the button is touched */
- .btn:active {
-  transform: scale(0.9);
- }
-
- /* Add a press and hold effect when the button is touched and held */
- .btn {
-  touch-action: manipulation;
- }
-}
-
 .fa-pen-to-square,
 .fa-trash,
 .fa-plus {
