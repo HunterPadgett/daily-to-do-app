@@ -567,9 +567,16 @@ button {
 
 @media screen and (min-width: 1280px) {
  /* CSS styles for screens bigger than 1280px  go here */
+
+ .btn {
+  /* Other button styles */
+  transition: 0.2s ease-in-out;
+ }
+
  .btn:hover {
   scale: 1.1;
   transition: 0.2s ease-in-out;
+  border-radius: 50%;
  }
 }
 
@@ -577,22 +584,12 @@ button {
  /* CSS styles for screens smaller than 821px (ipad) go here */
  /* Add a subtle button effect when the button is touched */
  .btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- }
-
- /* Add a focus effect when the button has focus */
- .btn:focus {
-  box-shadow: 0 0 0 3px #007bff;
-  outline: none;
+  transform: scale(0.9);
  }
 
  /* Add a press and hold effect when the button is touched and held */
  .btn {
   touch-action: manipulation;
- }
- .btn:active {
-  background-color: #e9ecef;
  }
 }
 
