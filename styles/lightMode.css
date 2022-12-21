@@ -571,12 +571,13 @@ button {
  .btn {
   /* Other button styles */
   transition: 0.2s ease-in-out;
+  border: none;
  }
 
  .btn:hover {
   scale: 1.1;
   transition: 0.2s ease-in-out;
-  border-radius: 50%;
+  border: none;
  }
 }
 
